@@ -10,7 +10,7 @@ const app = express();
 const PORT = process.env.PORT || 3001;
 const SequelizeStore = require('connect-session-sequelize')(session.Store);
 const sess = {
-    secret: 'Super secret secret',
+    secret: 'Secretly a secret',
     cookie: { maxAge: 36000 },
     resave: false,
     saveUninitialized: true,
@@ -18,6 +18,7 @@ const sess = {
         db: sequelize
     })
 };
+
 app.use(session(sess));
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
